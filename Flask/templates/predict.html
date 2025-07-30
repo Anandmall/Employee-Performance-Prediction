@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-section" style="background-image: url('/static/form.png');">
+    <form action="/pred" method="POST" class="form-box">
+        {% for field in ['quarter', 'department', 'day', 'team', 'targeted_productivity',
+                         'smv', 'over_time', 'incentive', 'idle_time', 'idle_men',
+                         'no_of_style_change', 'no_of_workers', 'month'] %}
+            <input type="text" name="{{ field }}" placeholder="{{ field.replace('_', ' ').capitalize() }}" required>
+        {% endfor %}
+        <input type="submit" value="SUBMIT" class="submit-btn">
+    </form>
+</div>
+{% endblock %}
